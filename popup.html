@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial;
+            width: 500px;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            height: 130px;
+            font-size: 10px;
+        }
+
+        .full {
+            width: 100%;
+        }
+        textarea {
+            margin: 6px 0px;
+        }
+        h4 {
+            margin: 0px;
+            margin-bottom: 8px;
+        }
+        .info {
+            border: 1px solid #094db4;
+            background-color: #c4d2e7;
+            color:  #094db4;
+            font-size: 12px;
+            padding: 8px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="info">
+        You must be on the GMail tab to execute this.<br/>
+        If it's not working, probably means a query selector to find the elements has changed, or don't work in your language. Use the inspector and update the scripts accordingly.
+    </div>
+    <div>
+        <h4>Data</h4>
+        <textarea id="csv" placeholder="CSV data
+- Separator must be comma (,)
+- First column must be email"></textarea>
+
+        <h4>Email</h4>
+        <input type="text" class="full" id="subj" placeholder="Email subject" />
+        <textarea id="templ" placeholder="HTML Template
+- You can use COL_0, COL_1,... COL_9 to use fields from the CSV.
+- If inserting images, you need to host them somewhere first. That'll also make your email lighter."></textarea>
+    </div>
+    <br/>
+    <h4>Send</h4>
+    <div>
+        <input type="text" id="test-email" placeholder="test@gmail.com" style="width: 320px" />
+        <button id="run-test" title="Send the first row of CSV to this address">Send test</button>
+    </div>
+    <div style="margin-top: 4px;">
+        <input type="text" id="delay" value="2000"  style="width: 50px"/> Delay in milliseconds between emails
+        <button id="run" class="full" style="margin-top: 16px" title="Send all">Send Emails</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
