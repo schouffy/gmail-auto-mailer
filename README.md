@@ -27,6 +27,16 @@ If you have a few dozen or hundred emails to send and don't want to use mail mer
 - LEAVE the browser open on the correct tab until it completes. Also make sure it's not going to go to sleep or something.
 
 
+# It doesn't work?
+
+Selectors are highly dependant on the way the HTML is structured on GMail page. If these change, the selectors might stop working and the extension is screwed.
+I probably won't bother updating the extension everytime there's a breaking change (unless I need to for my own use), but if that happens to you, the fix will probably be pretty simple if you have a basic knowledge of programming and css selectors:
+- Check in `content.js` where the GMail tab elements are queried
+- Use your browser inspector to determine new selectors that work
+- Replace the selectors in the code and run again
+
+
+
 # Disclaimer
 
 It's just something I made for my own use, I've used AI and it's not extensively tested.
